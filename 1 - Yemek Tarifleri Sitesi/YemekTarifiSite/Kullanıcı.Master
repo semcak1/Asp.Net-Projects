@@ -1,0 +1,100 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Kullanıcı.master.cs" Inherits="Kullanıcı" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="MasterPage.css" rel="stylesheet" />
+    <link href="Kullanici.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+
+        .auto-style2 {
+            text-align: center;
+            color: #FFFFFF;
+            font-weight: bold;
+        }
+        .auto-style3 {
+            color: #CC3300;
+        }
+        .auto-style4 {
+            color: #000000;
+        }
+        .auto-style5 {
+            background-color: #CC3300;
+            height: 41px;
+            width: 700px;
+        }
+        .auto-style6 {
+            color: #FFFFCC;
+        }
+        .auto-style7 {
+            text-align: center;
+            color: #FFFFCC;
+            font-weight: bold;
+        }
+        .auto-style8 {
+            text-align: center;
+            color: #FFFFFF;
+            font-weight: bold;
+            width: 137px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="Head">
+            <asp:Image ID="Image1" runat="server" Height="151px" ImageUrl="~/Banner/yemek4.jpg" Width="702px" />
+        </div>
+
+        <div style="height: 20px; width: 700px; margin-left: 300px;"></div>
+        <div style="margin-left: 300px; height:auto" class="auto-style5">
+            <table class="auto-style1">
+                <tr>
+                    <td class="auto-style7" style="border: thin solid #FFFFCC;"><a href="Anasayfa.aspx" class="auto-style6" style="border-style: none">ANASAYFA</a></td>
+                    <td class="auto-style2" style="border: thin solid #FFFFCC;"><a href="GununYemegi.aspx" class="auto-style6">GÜNÜN YEMEĞİ</a><span class="auto-style6"> </span> </td>
+                    <td class="auto-style8" style="border: thin solid #FFFFCC;"><a href="TarifOner.aspx" class="auto-style6">TARİF ÖNER</a></td>
+                    <td class="auto-style2" style="border: thin solid #FFFFCC;"><a href="Hakkımızda.aspx" class="auto-style6">HAKKIMIZDA</a></td>
+                    <td class="auto-style2" style="border: thin solid #FFFFCC;"><a href="Iletisim.aspx" class="auto-style6">İLETİŞİM</a></td>
+                </tr>
+            </table>
+        </div>
+        <div style="height: 20px; width: 700px; margin-left: 300px;"></div>
+        <div style="margin-left:300px;width:700px;height:499px;">
+            <div style="height: auto; float:left;  width: 200px;   background-color: #ffd800;"  >
+                <strong><span class="auto-style3">KATEGORİLER<br />
+                </span><br />
+            
+                <asp:DataList ID="DataList1" runat="server" BorderColor="#CC3300" BorderStyle="Groove" Width="174px">
+                    <ItemTemplate>
+                        <div style="border-style: solid; border-width: thin; width: 176px;height:auto; color: #CC3300;">
+                            
+                            <a href="KategoriDetay.aspx?Kategoriid=<%# Eval("KategoriId") %>">
+                                <strong><asp:Label ID="Label1" runat="server" Text='<%# Eval("KategoriAd")%>' style="color: #000000"></asp:Label>
+                                <span class="auto-style4">( </span></strong>
+                            </a>
+                            <asp:Label ID="Label2" runat="server" style="color: #000000" Text='<%# Eval("KategoriAdet") %>'></asp:Label>
+                            <span class="auto-style4">)</span></div>
+                    </ItemTemplate>
+                </asp:DataList>
+            
+            
+                </strong>
+            
+            
+            </div>
+            <div style="height: auto;float:left; width: 450px; margin-left: 50px; background-color: #ffd800;">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+                
+            </div>
+        </div>
+    </form>
+</body>
+</html>
